@@ -62,15 +62,11 @@ struct Onboarding: View {
                     }
                     
                     Button("Register") {
-                        if viewModel.validateUserInput(firstName: firstName, lastName: lastName, email: email, phoneNumber: phoneNumber) {
+                        if viewModel.validateUserInput(firstName: firstName, lastName: lastName, email: email) {
                             UserDefaults.standard.set(firstName, forKey: kFirstName)
                             UserDefaults.standard.set(lastName, forKey: kLastName)
                             UserDefaults.standard.set(email, forKey: kEmail)
                             UserDefaults.standard.set(true, forKey: kIsLoggedIn)
-                            UserDefaults.standard.set(true, forKey: kOrderStatuses)
-                            UserDefaults.standard.set(true, forKey: kPasswordChanges)
-                            UserDefaults.standard.set(true, forKey: kSpecialOffers)
-                            UserDefaults.standard.set(true, forKey: kNewsletter)
                             firstName = ""
                             lastName = ""
                             email = ""

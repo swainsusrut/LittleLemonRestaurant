@@ -147,6 +147,21 @@ extension Text {
                 .font(.custom("Karla-Bold", size: 15))
         }
     }
+    
+    func onboardingTextHeaderStyle() -> some View {
+        if #available(iOS 16.0, *) {
+            return self
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .foregroundColor(Color.primaryColor1)
+                .font(.custom("Karla-Bold", size: 20))
+                .fontWeight(.bold)
+        } else {
+            return self
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .foregroundColor(Color.primaryColor1)
+                .font(.custom("Karla-Bold", size: 20))
+        }
+    }
 }
 
 extension TextField {
@@ -159,6 +174,19 @@ extension TextField {
                     RoundedRectangle(cornerRadius: 7)
                         .stroke(Color.secondaryColor1, lineWidth: 2)
                 )
+    }
+    
+    func profileTextStyle() -> some View {
+        self
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .foregroundColor(Color.highlightColor2)
+            .font(.custom("Karla-Bold", size: 14))
+            .overlay(
+                    RoundedRectangle(cornerRadius: 7)
+                        .stroke(Color.primaryColor1, lineWidth: 0.5)
+                )
+            .textFieldStyle(.roundedBorder)
+            .disableAutocorrection(true)
     }
 }
 
