@@ -10,9 +10,22 @@
 		7A0841C92D48E398005283AB /* LittleLemonRestaurant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LittleLemonRestaurant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		7A2473EB2D50ED4E003E858F /* Exceptions for "LittleLemonRestaurant" folder in "LittleLemonRestaurant" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 7A0841C82D48E398005283AB /* LittleLemonRestaurant */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		7A0841CB2D48E398005283AB /* LittleLemonRestaurant */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				7A2473EB2D50ED4E003E858F /* Exceptions for "LittleLemonRestaurant" folder in "LittleLemonRestaurant" target */,
+			);
 			path = LittleLemonRestaurant;
 			sourceTree = "<group>";
 		};
@@ -254,6 +267,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"LittleLemonRestaurant/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LittleLemonRestaurant/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Little Lemon";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -283,6 +297,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"LittleLemonRestaurant/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LittleLemonRestaurant/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Little Lemon";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
