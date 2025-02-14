@@ -18,6 +18,8 @@ struct Onboarding: View {
     
     @State var isLoggedIn = false
     
+    @State var contentOffset: CGSize = .zero
+    
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
@@ -80,7 +82,29 @@ struct Onboarding: View {
                     .buttonStyle(ButtonStyleYellowColorWide())
                 }
             }
+            //Auto Scroll scroll view when keyboard appears
+            //This offsets the height of scroll view based on calculated height
+            .offset(y: contentOffset.height)
+            .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { notification in
+                withAnimation {
+                    let keyboardRect = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+                    let keyboardHeight = keyboardRect.height
+                    self.contentOffset = CGSize(width: 0, height: -keyboardHeight / 2 + 50)
+                }
+            }
+            .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { notification in
+                withAnimation {
+                    self.contentOffset = .zero
+                }
+            }
         }
+        .navigationBarBackButtonHidden()
+        .onAppear() {
+            if UserDefaults.standard.bool(forKey: kIsLoggedIn) {
+                isLoggedIn = true
+            }
+        }
+        
     }
 }
 
