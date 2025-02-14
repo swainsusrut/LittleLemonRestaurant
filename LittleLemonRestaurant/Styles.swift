@@ -98,6 +98,19 @@ struct MyToggleStyle: ToggleStyle {
     }
 }
 
+struct CheckboxToggleStyle: ToggleStyle {
+    func makeBody(configuration: Self.Configuration) -> some View {
+        HStack {
+            Image(systemName: configuration.isOn ? "checkmark.square" : "square")
+                .resizable()
+                .frame(width: 24, height: 24)
+                .onTapGesture { configuration.isOn.toggle() }
+            configuration.label
+                .padding(.leading, 10)
+        }
+    }
+}
+
 extension Font {
     static func displayFont() -> Font {
         return Font.custom("Alike-Regular", size: 40).weight(.medium)
