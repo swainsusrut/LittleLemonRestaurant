@@ -23,17 +23,22 @@ struct MenuList: Codable {
         let dataTask = URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data {
                 let decoder = JSONDecoder()
+                
+                //Decodes the received json
                 if let fullMenu = try? decoder.decode(MenuList.self, from: data) {
                     for dish in fullMenu.menu {
                         let newDish = Dish(context: viewContext)
                         newDish.title = dish.title
                         if let price = Float?(dish.price) {
                             newDish.price = price
+                        } else {
+                            newDish.price = 0.0
                         }
                         newDish.descriptionDish = dish.descriptionDish
                         newDish.image = dish.image
                         newDish.category = dish.category
                     }
+                    //And saves it to Core Data
                     try? viewContext.save()
                 } else {
                     print(error.debugDescription.description)

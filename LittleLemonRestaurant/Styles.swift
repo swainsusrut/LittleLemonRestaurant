@@ -83,7 +83,7 @@ struct MyToggleStyle: ToggleStyle {
                 configuration.label
             }
             .font(.custom("Karla-Regular", size: 15))
-            .foregroundColor(configuration.isOn ? Color.primaryColor1 : Color.highlightColor1)
+            .foregroundColor(configuration.isOn ? Color.primaryColor1 : Color.highlightColor2)
             .padding([.leading, .trailing], 12)
             .padding([.top, .bottom], 10)
         }
@@ -91,7 +91,7 @@ struct MyToggleStyle: ToggleStyle {
             if configuration.isOn {
                 Color.secondaryColor2
             } else {
-                Color.highlightColor2
+                Color.highlightColor1
             }
         }
         .cornerRadius(10)
@@ -200,6 +200,13 @@ extension TextField {
                 )
             .textFieldStyle(.roundedBorder)
             .disableAutocorrection(true)
+    }
+}
+
+extension UINavigationController {
+    // Remove back button text
+    open override func viewWillLayoutSubviews() {
+        navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 }
 

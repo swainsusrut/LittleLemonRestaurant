@@ -33,6 +33,7 @@ struct Onboarding: View {
                         The header and the hero, display information that is fixed and does not change when the screen changes, like the Little Lemon logo and information about a specific restaurant branch.
                      */
                     VStack(spacing: 10, content: {
+                        //Redirect to Home Page if already logged In
                         NavigationLink(destination: Home(), isActive: $isLoggedIn) { }
                         Text("First name *")
                             .onboardingTextStyle()
