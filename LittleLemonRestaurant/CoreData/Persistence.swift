@@ -66,6 +66,8 @@ struct PersistenceController {
         let dish = Dish(context: shared.container.viewContext)
         dish.title = "Greek Salad"
         dish.price = 10.0
+        dish.category = "Salad"
+        dish.descriptionDish = "Raw greens (such as lettuce) often combined with other vegetables and toppings and served especially with dressing."
         dish.image = "https://github.com/Meta-Mobile-Developer-PC/Working-With-Data-API/blob/main/images/greekSalad.jpg?raw=true"
         return dish
     }
