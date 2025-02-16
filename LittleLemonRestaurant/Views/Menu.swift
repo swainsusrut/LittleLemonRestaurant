@@ -27,7 +27,7 @@ struct Menu: View {
     }
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 VStack {
                     if !isKeyboardVisible {

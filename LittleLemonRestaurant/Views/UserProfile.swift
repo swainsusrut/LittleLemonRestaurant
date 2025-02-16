@@ -28,9 +28,12 @@ struct UserProfile: View {
     @State private var newsletter = true
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ScrollView(.vertical, showsIndicators: false) {
                 NavigationLink(destination: Onboarding(), isActive: $isLoggedOut) { }
+//                navigationDestination(isPresented: $isLoggedOut) {
+//                    Onboarding()
+//                }
                 
                 VStack(spacing: 15) {
                     VStack(spacing: 15) {
@@ -155,6 +158,7 @@ struct UserProfile: View {
                 if viewModel.errorMessageShow {
                     withAnimation() {
                         Text(viewModel.errorMessage)
+                            .onboardingTextStyle()
                             .foregroundColor(.red)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.leading)

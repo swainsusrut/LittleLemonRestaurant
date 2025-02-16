@@ -11,7 +11,7 @@ struct Header: View {
     @State var isLoggedIn: Bool = false
     
     var body: some View {
-        NavigationView(content: {
+        NavigationStack(root: {
             ZStack {
                 Image("Logo")
                 HStack {

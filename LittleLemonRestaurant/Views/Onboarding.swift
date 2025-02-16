@@ -21,7 +21,7 @@ struct Onboarding: View {
     @State var contentOffset: CGSize = .zero
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack {
                     Header()
@@ -35,6 +35,9 @@ struct Onboarding: View {
                     VStack(spacing: 10, content: {
                         //Redirect to Home Page if already logged In
                         NavigationLink(destination: Home(), isActive: $isLoggedIn) { }
+//                        navigationDestination(isPresented: $isLoggedIn) {
+//                            Home()
+//                        }
                         Text("First name *")
                             .onboardingTextStyle()
                         TextField("First Name", text: $firstName)
