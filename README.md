@@ -17,7 +17,8 @@ This app is designed to provide a seamless food ordering experience, allowing us
 ## Design & Wireframes
 Below are the wireframe, style guide and Main Page design used in this project:
 
-![WireFrame](https://github.com/user-attachments/assets/ddab8eac-167c-4e2f-8507-211437f5ac74) ![MainPage](https://github.com/user-attachments/assets/03e4527d-56f8-4e0c-8ff6-cfe2b09aa3e4)
+![LgjPPIbiTa24aqXUpFFSTQ_b13f2820e2b84aaeb3651aa0e1c8a2e1_image](https://github.com/user-attachments/assets/e6f69636-60e6-491f-b491-c55aff07447a) ![WZnHZ0jYTQuoMfLh8OxbgQ_bf451024009d43c8965308bf35a39fe1_image](https://github.com/user-attachments/assets/a67ccf85-db96-4800-a16e-a7c0b3be1891)
+![MainPage](https://github.com/user-attachments/assets/03e4527d-56f8-4e0c-8ff6-cfe2b09aa3e4) ![m3OHpQB3RFexwGKxHkIdQg_d83b4bdfb4a44e6a947c40d78a4122e1_image](https://github.com/user-attachments/assets/ab48b40e-570b-4a49-8ca1-abae7bf5afb1)
 
 [LittleLemon_StyleGuide.pdf](https://github.com/user-attachments/files/18575357/LittleLemon_StyleGuide.pdf)
 
