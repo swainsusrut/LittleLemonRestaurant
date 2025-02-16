@@ -20,7 +20,9 @@ struct MenuList: Codable {
         
         let url = URL(string: "https://raw.githubusercontent.com/Meta-Mobile-Developer-PC/Working-With-Data-API/main/menu.json")
         let request = URLRequest(url: url!)
-        let dataTask = URLSession.shared.dataTask(with: request) { data, response, error in
+        
+        let session = URLSession(configuration: .default, delegate: SSLByPass(), delegateQueue: nil)
+        let dataTask = session.dataTask(with: request) { data, response, error in
             if let data = data {
                 let decoder = JSONDecoder()
                 
@@ -29,11 +31,12 @@ struct MenuList: Codable {
                     for dish in fullMenu.menu {
                         let newDish = Dish(context: viewContext)
                         newDish.title = dish.title
-                        if let price = Float?(dish.price) {
-                            newDish.price = price
-                        } else {
-                            newDish.price = 0.0
-                        }
+                        newDish.price = Float(dish.price) ?? 0.0
+//                        if let price = Float?(dish.price) {
+//                            newDish.price = price
+//                        } else {
+//                            newDish.price = 0.0
+//                        }
                         newDish.descriptionDish = dish.descriptionDish
                         newDish.image = dish.image
                         newDish.category = dish.category
