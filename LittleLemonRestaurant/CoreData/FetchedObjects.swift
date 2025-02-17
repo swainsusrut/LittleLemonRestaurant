@@ -10,6 +10,7 @@ import Foundation
 import SwiftUI
 
 //Reusable SwiftUI component for fetching and displaying Core Data objects where T represents CoreData Entity and Content represents SwiftUI view that will display the fetched results.
+//FetchedObjects is a struct that replaces @FetchRequest and serves to use dynamic predicates and sort descriptors.
 struct FetchedObjects<T, Content>: View where T : NSManagedObject, Content : View {
     
     //A closure that takes an array of fetched objects and returns a view
