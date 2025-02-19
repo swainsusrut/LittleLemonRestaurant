@@ -1,4 +1,4 @@
-# Little Lemon Restaurant App  
+# Little Lemon Food Ordering App  
 This is the capstone project of the Meta iOS Developer Professional Certification.  
 
 ## Problem Statement  
